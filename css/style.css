@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+:root{
+    --bg-main: hsl(222, 26%, 31%);
+    --bg-toggle-keypad: hsl(223, 31%, 20%);
+    --bg-screem: hsl(224, 36%, 15%);
+    /*keys*/
+    --bg-key: hsl(225, 21%, 49%);
+    --bg-key-shadow: hsl(224, 28%, 35%);
+    --bg-key-evaluete: hsl(6, 63%, 50%);
+    --bg-key-evaluete-shadow: hsl(6, 70%, 34%);
+    --bg-key-evaluete-hover: hsl(0, 67%, 63%);
+    --bg-key-reset-del: rgb(199, 199, 199);
+    --bg-button : hsl(30, 25%, 89%);
+    --bg-button-shadow: hsl(28, 16%, 65%);
+    --bg-slider2: hsl(25, 98%, 40%);
+    --bg-slider3: hsl(176, 100%, 44%);
+    /*text*/
+    --colork: hsl(221, 14%, 31%);
+    --bg-text-color: rgb(255, 255, 255);
+}
+
+    *{
+        font-family: 'League Spartan', sans-serif;
+    }
+
+    body{
+        margin: 0;
+        background-color: var(--bg-main);
+    }
+
+    .container{
+        /* background-color: aqua; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .box{
+        margin: auto;
+        width: 440px;
+        height: 469px;
+        border-radius: 10px;
+        /* background-color: red; */
+    }
+
+
+    .cabecalho{
+        border-radius: 10px;
+        /* background-color: hsl(177deg 100% 50%); */
+        padding: 1px 15px;
+        margin: 0px 53px -44px 47px;
+        font-size: 12px;
+        color: var(--bg-text-color);
+    }
+
+
+    .display{
+        border-radius: 10px;
+        background-color: var(--bg-screem);
+        padding: 10px 0px 10px;
+        margin: 41px 47px -26px 47px;
+    }
+
+    .screem{
+        font-size: 45px;
+        width: 312px;
+        background: none;
+        border: none;
+        text-align: right;
+        margin: 0px 15px;
+        color: var(--bg-text-color);
+    }
+        /* Keypad */
+
+    .botons{
+        display: grid;
+        grid: repeat(5, 60px) / repeat(4, 60px);
+        grid-row-gap: 0px;
+        grid-column-gap: 22px;
+        background-color: var(--bg-toggle-keypad);
+        margin: 38px 47px 0px 47px;
+        padding: 17px 14px 3px;
+        border-radius: 10px;
+    }
+
+    .botons :hover{
+        background-color: var(--bg-text-color);
+        color: var(--colork);
+    }
+
+    .botons button{
+        background-color: var(--bg-button);
+        border: none;
+        border-radius: 6px;
+        font-size: 19px;
+        width: 72px;
+        height: 42px;
+        color: var(--colork);
+        box-shadow: 0px 3px var(--bg-button-shadow);
+        cursor: pointer;
+    }
+
+    .calc{
+        text-align: justify;
+        margin: -1px -2px -36px -7px;
+        font-size: 21px;
+    }
+
+    .numTheme p{
+        /* text-align: justify; */
+        margin: 0px -11px 13px;
+        letter-spacing: 3px;
+        padding: 0px 0px 3px 290px;
+    }
+
+    .pTheme p{
+        text-align: justify;
+        margin: -6px 214px -18px;
+    }
+    
+    #evaluete {
+        width: 153px;
+        margin: 0px 83px;
+        background-color: var(--bg-key-evaluete);
+        box-shadow: 0px 3px var(--bg-key-evaluete-shadow);
+        color: var(--bg-text-color);
+    }
+
+    #reset{
+        width: 153px;
+        background-color: var(--bg-key);
+        color: var(--bg-text-color);
+        box-shadow: 0px 3px var(--bg-key-shadow);
+    }
+
+    #clear{
+        background-color: var(--bg-key);
+        color: var(--bg-text-color);
+        box-shadow: 0px 3px var(--bg-key-shadow);
+    }
+
+    #reset:hover{
+        background-color: var(--bg-key-reset-del);
+        color: var(--bg-text-color);
+    }
+
+    #evaluete:hover{
+        background-color: var(--bg-key-evaluete-hover);
+        color: var(--bg-text-color);
+    }
+
+    #clear:hover{
+        background-color: var(--bg-key-reset-del);
+        color: var(--bg-text-color);
+    }
+
+    /* Switch */
+    .input{
+        display: table;
+        position: relative;
+        width: 54px;
+        padding: 3px 4px;
+        background: var(--bg-toggle-keypad);
+        margin: -12px 0px 22px 265px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+        text-align: justify;
+    }
+       
+    .input input[type=radio]{
+        display: none;
+    }
+       
+    .input label{
+        float: left;
+        width: 4px;
+        height: 4px;
+        padding: 7px;
+        color: var(--bg-text-color);
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        cursor: pointer;
+        text-align: center;
+    }
+       
+    .botao_slider{
+        position: absolute;
+        top: 0px;
+        width: 0px;
+        height: 20px;
+        padding: 0 10px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+        transition: all .5s ease;
+    }
+       
+    #botao01:checked ~ .botao_slider{
+        left: 4px;
+        top: 2px;
+        background-color: var(--bg-key-evaluete);
+    }
+
+    #botao02:checked ~ .botao_slider{
+        left: 20px;
+        top: 2px;
+        background-color: var(--bg-slider2);
+    }
+
+    #botao03:checked ~ .botao_slider{
+        left: 38px;
+        top: 2px;
+        background-color: var(--bg-slider3);
+    }
